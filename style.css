@@ -463,69 +463,7 @@ footer {
   }
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
-  
-  nav {
-    padding: 0.8rem;
-  }
-  
-  nav a {
-    margin: 0 0.5rem;
-    font-size: 0.9rem;
-  }
-  
-  section {
-    padding: 3rem 1.5rem;
-  }
-  
-  .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-  
-  .skill-category {
-    min-width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  
-  header p {
-    font-size: 1rem;
-  }
-  
-  nav a {
-    margin: 0 0.3rem;
-    font-size: 0.8rem;
-  }
-  
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .about-container,
-  .skills-container,
-  .contact-container {
-    flex-direction: column;
-  }
-  
-  .about-image,
-  .about-text,
-  .contact-info,
-  .contact-form {
-    width: 100%;
-  }
-  /* Loading spinner */
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
+/* Single Loading Spinner Definition */
 .loading-spinner {
   display: inline-block;
   width: 2rem;
@@ -535,7 +473,12 @@ footer {
   border-top-color: var(--primary-color);
   animation: spin 1s ease-in-out infinite;
 }
-/* === Form Styles === */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Form Status Styles */
 .error-message {
   color: var(--accent-color);
   font-size: 0.8rem;
@@ -562,14 +505,21 @@ footer {
   display: block;
 }
 
-/* Loading Spinner (reuse existing animation) */
-.loading-spinner {
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 2px solid rgba(255,255,255,0.3);
-  border-top-color: white;
-  display: inline-block;
-  margin-left: 0.5rem;
-  vertical-align: middle;
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 { font-size: 2.5rem; }
+  nav { padding: 0.8rem; }
+  nav a { margin: 0 0.5rem; font-size: 0.9rem; }
+  section { padding: 3rem 1.5rem; }
+  .projects-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+  .skill-category { min-width: 200px; }
 }
+
+@media (max-width: 480px) {
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
+  nav a { margin: 0 0.3rem; font-size: 0.8rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .about-container, .skills-container, .contact-container { flex-direction: column; }
+  .about-image, .about-text, .contact-info, .contact-form { width: 100%; }
 }
